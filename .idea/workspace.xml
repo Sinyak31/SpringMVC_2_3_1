@@ -13,7 +13,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/AppInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/AppInit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/config/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/UserDao.java" afterDir="false" />
@@ -81,6 +80,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Андрей\Java\KataMentor\SpringMVC_2_3_1\src\main\webapp\WEB-INF\pages" />
       <recent name="D:\Андрей\Java\KataMentor\SpringMVC_2_3_1\src\main\java\org\example" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -185,11 +185,26 @@
       <option name="presentableId" value="Default" />
       <updated>1717316532185</updated>
       <workItem from="1717316533267" duration="15655000" />
-      <workItem from="1717689382161" duration="16148000" />
+      <workItem from="1717689382161" duration="17446000" />
+      <workItem from="1717932746906" duration="13256000" />
+      <workItem from="1718042301065" duration="9429000" />
     </task>
+    <task id="LOCAL-00001" summary="I put the @PostMapping annotation over the editUser() method in the controller">
+      <option name="closed" value="true" />
+      <created>1717783800066</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717783800066</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="I put the @PostMapping annotation over the editUser() method in the controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="I put the @PostMapping annotation over the editUser() method in the controller" />
   </component>
 </project>

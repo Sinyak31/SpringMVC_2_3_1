@@ -1,13 +1,22 @@
 package org.example.controller;
 
+
 import org.example.entity.User;
 import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
+
+import javax.validation.Valid;
+
+
 @RequestMapping(value = "/users")
 @Controller
 public class UserController {
@@ -19,22 +28,22 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    public String saveUser(@RequestParam(value = "name") String name, @RequestParam(value = "surname") String surname
-            , @RequestParam(value = "age") int age) {
-        userService.saveUser(new User(name, surname, age));
+    public String saveUser(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "AddUser";
+        }
+        userService.saveUser(user);
         return "redirect:index";
     }
 
     @GetMapping("/addUser")
-    public String addUser() {
+    public String addUser(@ModelAttribute("user") User user) {
         return "AddUser";
     }
 
     @GetMapping("/index")
     public String getUsers(Model model) {
-        List<User> users;
-        users = userService.getUserList();
-        model.addAttribute("usersList", users);
+        model.addAttribute("usersList", userService.getUserList());
         return "Users";
     }
 
@@ -45,16 +54,18 @@ public class UserController {
     }
 
     @GetMapping("/edit")
-    public String showEditUser(@RequestParam(value = "id") long id, Model model) {
-        User user = userService.getUserFindById(id);
-        model.addAttribute("user", user);
+    public String showEditUser(Model model, @RequestParam(value = "id") long id) {
+        model.addAttribute("user", userService.getUserFindById(id));
         return "EditUser";
     }
 
     @PostMapping("/editUser")
-    public String editUser(@RequestParam(value = "id") long id, @RequestParam(value = "name") String name,
-                           @RequestParam(value = "surname") String surname, @RequestParam(value = "age") int age) {
-        userService.updateUser(id, new User(name, surname, age));
+    public String editUser(@ModelAttribute("user") @Valid User user
+            , BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "EditUser";
+        }
+        userService.updateUser(user);
         return "redirect:index";
     }
 }
